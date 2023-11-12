@@ -34,15 +34,19 @@
         }
 
         .titulo {
-            font-size: 2em; /* Utilizando em para hacerlo responsive */
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    position: relative; /* Agregado para posicionar correctamente el título */
+    z-index: 2; /* Asegura que el título esté por encima del contenido */
+}
 
-        .datos {
-            text-align: left;
-            margin-top: 20px;
-            font-size: 1em; /* Utilizando em para hacerlo responsive */
+.datos {
+    text-align: left;
+    margin-top: 80px; /* Ajusta según la altura del bloque del título */
+    font-size: 1em;
+}
+
         }
 
         ul {
