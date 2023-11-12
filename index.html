@@ -1,9 +1,126 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Video de Fondo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certidiagram</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            background-color: black;
+        }
+
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        #video-background {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .contenido {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            color: white;
+        }
+
+        .titulo {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .datos {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 5px 0;
+        }
+
+        .neon-list {
+            list-style-type: none;
+            padding: 0;
+            font-size: 18px;
+        }
+
+        .neon-list li {
+            margin: 5px 0;
+            color: #fff;
+            text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #5271ff, 0 0 82px #5271ff, 0 0 92px #5271ff, 0 0 102px #5271ff, 0 0 151px #5271ff;
+        }
+
+        .neon {
+            color: #fff;
+            text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #5271ff, 0 0 82px #5271ff, 0 0 92px #5271ff, 0 0 102px #5271ff, 0 0 151px #5271ff;
+        }
+
+        .galeria-container {
+            margin-top: 20px;
+        }
+
+        .galeria {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .imagen-galeria {
+            width: 200px;
+            height: 200px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            margin: 10px;
+        }
+
+        .imagen-galeria:hover {
+            transform: scale(1.2);
+        }
+
+        .imagen-ampliada {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .imagen-ampliada img {
+            max-width: 100vw;
+            max-height: 100vh;
+            cursor: pointer;
+        }
+    </style>
 </head>
+
 <body>
     <div class="video-container">
         <video autoplay muted loop id="video-background">
@@ -11,26 +128,53 @@
             Tu navegador no admite el elemento de video.
         </video>
     </div>
+
     <div class="contenido">
         <div class="titulo">
             <h1 class="neon">
                 Diagrama de Estudios
             </h1>
         </div>
-        <div class="pdf-container">
-            <div class="pdf-wrapper">
-                <embed src="cvPDF.pdf" type="application/pdf">
-                <a href="cvPDF.pdf" download="cvPDF.pdf" class="download-button">Download Diagram CV</a>
-            </div>
-        </div>
+
         <div class="datos">
             <h2 class="neon">Contacto:</h2>
             <ul class="neon-list">
                 <li>Diaz Ramon Gaston</li>
                 <li>diaz.hunt.tester@gmail.com</li>
-                <!-- Agrega más detalles según tus necesidades -->
             </ul>
         </div>
     </div>
+
+    <!-- Agrega el div de la galería aquí -->
+    <div class="galeria-container">
+        <div class="galeria">
+            <img src="../Certdiagram/1.jpg" alt="1" class="imagen-galeria mostrar" onclick="ampliarImagen(this)">
+            <img src="../Certdiagram/2.jpg" alt="2" class="imagen-galeria" onclick="ampliarImagen(this)">
+            <img src="../Certdiagram/3.jpg" alt="3" class="imagen-galeria" onclick="ampliarImagen(this)">
+            
+            <img src="../Certdiagram/5.png" alt="5" class="imagen-galeria" onclick="ampliarImagen(this)">
+            <img src="../Certdiagram/6.jpg" alt="6" class="imagen-galeria" onclick="ampliarImagen(this)">
+            <img src="../Certdiagram/7.jpg" alt="6" class="imagen-galeria" onclick="ampliarImagen(this)">
+            <!-- Agrega más imágenes según sea necesario -->
+        </div>
+    </div>
+
+    <!-- Ventana emergente para la imagen ampliada -->
+    <div class="imagen-ampliada" onclick="cerrarImagenAmpliada()">
+        <img src="" alt="Imagen Ampliada">
+    </div>
+
+    <script>
+        function ampliarImagen(img) {
+            var ruta = img.src;
+            document.querySelector(".imagen-ampliada img").src = ruta;
+            document.querySelector(".imagen-ampliada").style.display = "flex";
+        }
+
+        function cerrarImagenAmpliada() {
+            document.querySelector(".imagen-ampliada").style.display = "none";
+        }
+    </script>
 </body>
+
 </html>

@@ -13,26 +13,6 @@ body {
     height: 100%;
     z-index: -1; /* Coloca el video detrás del contenido */
 }
-@media (max-width: 768px) {
-    .titulo {
-        font-size: 18px;
-    }
-    .pdf-container {
-        padding: 10px;
-    }
-    .pdf-wrapper {
-        width: 100%;
-    }
-    .neon-list {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 480px) {
-    .pdf-container {
-        margin-top: 10px;
-    }
-}
 
 #video-background {
     width: 100%;
