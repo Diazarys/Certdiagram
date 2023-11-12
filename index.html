@@ -37,16 +37,25 @@
     font-weight: bold;
     margin-bottom: 20px;
     position: fixed;
-    top: 50%;
+    top: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     z-index: 2;
+    width: 100%; /* Asegura que el título ocupe todo el ancho */
+    background-color: rgba(0, 0, 0, 0.7); /* Agrega fondo para mejorar la legibilidad */
+    padding: 10px; /* Ajusta según tus preferencias de diseño */
+}
+
+.contenido {
+    margin-top: 60px; /* Ajusta según la altura del bloque del título fijo */
 }
 
 .datos {
     text-align: center;
-    margin-top: 80px; /* Ajusta según la altura del bloque del título */
+    margin-top: 20px;
     font-size: 1em;
+}
+
 }
         
 
