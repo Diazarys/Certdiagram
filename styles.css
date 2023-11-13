@@ -111,3 +111,14 @@ ul li {
         0 0 102px #5271ff,
         0 0 151px #5271ff;
 }
+
+footer {
+    background-color: #333; /* Fondo del footer */
+    color: silver; /* Color del texto */
+    text-align: center;
+    padding: 10px;
+    position: fixed; /* Fija el footer en la parte inferior */
+    width: 100%;
+    bottom: 0;
+    border-top: 1px solid silver; /* Línea superior plateada */
+}
